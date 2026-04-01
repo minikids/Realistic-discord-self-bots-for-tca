@@ -3,7 +3,7 @@ import discord
 import requests
 import os
 
-token = "MTQ4ODY4MDQ1OTUzMjUwNTIzNA.GcezsN.OTwBkDHfUP0REo4jbAaEfulWm20DaLpc876_EM"
+token = "MTQ4ODY3OTExMjc2NjkxNDY2Mg.GLOwBK.l45ZZnP1RvIiOuTNNAIMVK7Jx2v2nJCho5IhQs"
 
 bot = commands.Bot(command_prefix='!')
 
