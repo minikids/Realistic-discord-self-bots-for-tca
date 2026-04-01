@@ -1,6 +1,9 @@
 from discord.ext import commands
 import discord
+import requests
 import os
+
+token = "MTQ4ODY4MDQ1OTUzMjUwNTIzNA.GcezsN.OTwBkDHfUP0REo4jbAaEfulWm20DaLpc876_EM"
 
 bot = commands.Bot(command_prefix='!')
 
@@ -29,6 +32,10 @@ async def offline(ctx):
         await bot.change_presence(status=discord.Status.offline)
 
 @bot.command()
+async def bio(ctx, message: str):
+    requests.patch(url="https://discord.com/api/v9/users/@me", headers= {"authorization": token}, json = {"bio": message} )
+
+@bot.command()
 async def shutdown(ctx):
     if str(ctx.message.author) == "kinz_gamer":
         os._exit(0)
@@ -49,7 +56,7 @@ def main():
         threading.Thread(
             target=bot.run,
             args=(
-                "MTQ4ODY4MDQ1OTUzMjUwNTIzNA.GcezsN.OTwBkDHfUP0REo4jbAaEfulWm20DaLpc876_EM",
+                token,
             ),
         ).start()
         run = True
