@@ -32,10 +32,6 @@ async def offline(ctx):
         await bot.change_presence(status=discord.Status.offline)
 
 @bot.command()
-async def bio(ctx, message: str):
-    requests.patch(url="https://discord.com/api/v9/users/@me", headers= {"authorization": token}, json = {"bio": message} )
-
-@bot.command()
 async def shutdown(ctx):
     if str(ctx.message.author) == "kinz_gamer":
         os._exit(0)
