@@ -2,8 +2,9 @@ from discord.ext import commands
 import discord
 import requests
 import os
+import sys
 
-token = "MTQ4ODY3OTExMjc2NjkxNDY2Mg.GLOwBK.l45ZZnP1RvIiOuTNNAIMVK7Jx2v2nJCho5IhQs"
+token = f"{sys.argv[1]}"
 
 bot = commands.Bot(command_prefix='!')
 
