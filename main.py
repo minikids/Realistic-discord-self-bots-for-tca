@@ -24,10 +24,9 @@ async def online(ctx, status: str):
         await bot.change_presence(status=discord.Status.online, activity=status)
 
 @bot.command()
-async def offline(ctx, status: str):
+async def offline(ctx):
     if str(ctx.message.author) == "kinz_gamer":
-        status = discord.CustomActivity(name=status)
-        await bot.change_presence(status=discord.Status.offline, activity=status)
+        await bot.change_presence(status=discord.Status.offline)
 
 @bot.command()
 async def shutdown(ctx):
